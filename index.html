@@ -5,6 +5,20 @@
   <link rel="stylesheet" href="style.css?v=1">
 </head>
 <body>
+  <script>
+  const url = window.location.href;
+  let lastHtml = document.documentElement.outerHTML;
+
+  setInterval(async () => {
+    const res = await fetch(url, {cache: "no-store"});
+    const html = await res.text();
+
+    if (html !== lastHtml) {
+      location.reload();
+    }
+  }, 15000);
+</script>
+
   <div class="card">
     <img src="pfp.jpg" alt="Oski">
     <h1>Oski</h1>
