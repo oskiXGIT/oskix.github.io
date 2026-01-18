@@ -84,59 +84,21 @@
 <body>
   <div class="card">
     <img src="pfp.jpg" alt="Oski">
-
     <h1>Oski</h1>
-
     <p>
       My Discord tends to get terminated.<br>
       Use the tool below to find my current account.
     </p>
-
     <div class="arrow">↓</div>
-
     <div class="btn btn-primary" id="discordBtn">
       Find my current Discord
     </div>
-
     <div class="terminal" id="terminal"></div>
-
     <a class="btn btn-outline" href="https://guns.lol/oskiX" target="_blank">
       All my socials
     </a>
   </div>
 
-  <script>
-    const currentDiscord = "https://discord.com/users/1458117222227640495";
-
-    const steps = [
-      "Initializing lookup…",
-      "Checking last known account…",
-      "Resolving current profile…",
-      "Account found."
-    ];
-
-    const btn = document.getElementById("discordBtn");
-    const terminal = document.getElementById("terminal");
-
-    btn.onclick = () => {
-      btn.classList.add("btn-disabled");
-      terminal.style.display = "block";
-      terminal.innerHTML = "";
-
-      steps.forEach((text, i) => {
-        setTimeout(() => {
-          const line = document.createElement("div");
-          line.className = "line";
-          line.textContent = "> " + text;
-          terminal.appendChild(line);
-        }, i * 800);
-      });
-
-      setTimeout(() => {
-        window.open(currentDiscord, "_blank");
-        btn.classList.remove("btn-disabled");
-      }, steps.length * 800 + 500);
-    };
-  </script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
