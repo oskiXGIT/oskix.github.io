@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Oski</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{
       background:#000;
@@ -18,46 +20,75 @@
       border:2px solid #fff;
       padding:30px;
       width:90%;
-      max-width:400px;
+      max-width:420px;
     }
     img{
       width:120px;
       height:120px;
       border-radius:50%;
       border:2px solid #fff;
+      margin-bottom:15px;
     }
-    .link{
-      margin-top:20px;
-      display:inline-block;
-      color:#000;
+    p{
+      font-size:14px;
+      opacity:0.85;
+      margin:10px 0 20px;
+    }
+    .arrow{
+      font-size:22px;
+      margin:10px 0;
+      animation: bounce 1.2s infinite;
+    }
+    @keyframes bounce{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(6px)}
+    }
+    .btn{
+      display:block;
+      margin:12px 0;
+      padding:12px;
       text-decoration:none;
-      background:#fff;
-      padding:12px 18px;
-      border-radius:8px;
       font-weight:bold;
+      border-radius:8px;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:#fff;
+      color:#000;
+    }
+    .btn-outline{
+      border:1px solid #fff;
+      color:#fff;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <img src="pfp.jpg" alt="Oski">
+
     <h1>Oski</h1>
-    <h3>Under Development</h3>
-    <a class="link" href="https://guns.lol/oskiX" target="_blank">All my socials</a>
+
+    <p>
+      My Discord tends to get terminated.<br>
+      Use the tool below to find my current account.
+    </p>
+
+    <div class="arrow">↓</div>
+
+    <a class="btn btn-primary" id="discordBtn">
+      Find my current Discord
+    </a>
+
+    <a class="btn btn-outline" href="https://guns.lol/oskiX" target="_blank">
+      All my socials
+    </a>
   </div>
 
   <script>
-    const url = window.location.href;
-    let lastHtml = document.documentElement.outerHTML;
-
-    setInterval(async () => {
-      const res = await fetch(url, {cache: "no-store"});
-      const html = await res.text();
-
-      if (html !== lastHtml) {
-        location.reload();
-      }
-    }, 15000);
+    const currentDiscord = "https://discord.com/users/YOUR_ID_HERE";
+    document.getElementById("discordBtn").onclick = () => {
+      window.open(currentDiscord, "_blank");
+    };
   </script>
 </body>
 </html>
