@@ -37,7 +37,7 @@
     .arrow{
       font-size:22px;
       margin:10px 0;
-      animation: bounce 1.2s infinite;
+      animation:bounce 1.2s infinite;
     }
     @keyframes bounce{
       0%,100%{transform:translateY(0)}
@@ -51,6 +51,7 @@
       font-weight:bold;
       border-radius:8px;
       cursor:pointer;
+      user-select:none;
     }
     .btn-primary{
       background:#fff;
@@ -59,6 +60,24 @@
     .btn-outline{
       border:1px solid #fff;
       color:#fff;
+    }
+    .btn-disabled{
+      opacity:0.6;
+      pointer-events:none;
+    }
+    .terminal{
+      margin-top:15px;
+      font-family: monospace;
+      font-size:13px;
+      text-align:left;
+      display:none;
+    }
+    .line{
+      opacity:0;
+      animation:fadeIn 0.4s forwards;
+    }
+    @keyframes fadeIn{
+      to{opacity:1}
     }
   </style>
 </head>
@@ -75,9 +94,11 @@
 
     <div class="arrow">↓</div>
 
-    <a class="btn btn-primary" id="discordBtn">
+    <div class="btn btn-primary" id="discordBtn">
       Find my current Discord
-    </a>
+    </div>
+
+    <div class="terminal" id="terminal"></div>
 
     <a class="btn btn-outline" href="https://guns.lol/oskiX" target="_blank">
       All my socials
@@ -86,8 +107,35 @@
 
   <script>
     const currentDiscord = "discord.com/users/1458117222227640495";
-    document.getElementById("discordBtn").onclick = () => {
-      window.open(currentDiscord, "_blank");
+
+    const steps = [
+      "Initializing lookup…",
+      "Checking last known account…",
+      "Resolving current profile…",
+      "Account found."
+    ];
+
+    const btn = document.getElementById("discordBtn");
+    const terminal = document.getElementById("terminal");
+
+    btn.onclick = () => {
+      btn.classList.add("btn-disabled");
+      terminal.style.display = "block";
+      terminal.innerHTML = "";
+
+      steps.forEach((text, i) => {
+        setTimeout(() => {
+          const line = document.createElement("div");
+          line.className = "line";
+          line.textContent = "> " + text;
+          terminal.appendChild(line);
+        }, i * 800);
+      });
+
+      setTimeout(() => {
+        window.open(currentDiscord, "_blank");
+        btn.classList.remove("btn-disabled");
+      }, steps.length * 800 + 500);
     };
   </script>
 </body>
