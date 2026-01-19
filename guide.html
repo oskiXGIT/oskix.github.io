@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Security Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      background:#000;
+      color:#fff;
+      font-family: Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      text-align:center;
+    }
+    .card{
+      border:2px solid #fff;
+      padding:30px;
+      width:90%;
+      max-width:600px;
+    }
+    .codebox{
+      text-align:left;
+      font-family: monospace;
+      font-size:14px;
+      line-height:1.4;
+      white-space:pre-wrap;
+      border:1px solid #fff;
+      padding:15px;
+      border-radius:10px;
+      margin:15px 0;
+      background: rgba(255,255,255,0.05);
+    }
+    .btn{
+      display:block;
+      margin:12px 0;
+      padding:12px;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:8px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn-outline{
+      border:1px solid #fff;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Quick Guide</h1>
+    <p>Prevention notes — structured like code</p>
+
+    <div class="codebox">
+# Online security notes
+
+This is not a motivational guide.
+Just practical stuff that reduces risk.
+
+Nothing here is magic.
+It just makes you harder to mess with.
+
+---
+
+## Phishing
+
+Phishing is social engineering.
+Someone tries to scare or rush you into clicking a link or entering your password.
+
+Common examples:
+- “Your account is locked”
+- “New login detected”
+- “You won something”
+- “Download this to fix an issue”
+
+If you didn’t expect the message, assume it’s fake.
+
+Don’t click the link.
+Don’t reply.
+If you care, open the site manually and check your account.
+
+---
+
+## Links and downloads
+
+Simple rule:
+If you don’t know why you got a link, don’t open it.
+
+Bad links can:
+- install malware
+- steal passwords
+- run scripts
+- log your IP
+
+If you really want to check a link:
+- scan it with VirusTotal
+- look at the domain
+- open it in a VM or separate device
+- use a VPN
+
+If you can’t explain the link, it’s not worth it.
+
+---
+
+## IP loggers
+
+IP loggers just collect your IP and basic device info.
+They’re often hidden in “funny videos” or random links.
+
+They only work if you click.
+
+Avoid them by:
+- not clicking random links
+- using a VPN
+- scanning links first
+
+---
+
+## Doxxing
+
+Doxxing is collecting personal info and posting it publicly.
+
+Common leaks come from:
+- reused usernames
+- public profiles
+- oversharing
+- location data in photos
+
+Basic prevention:
+- don’t post personal info publicly
+- use different usernames
+- keep accounts private when possible
+- use a separate email for public stuff
+
+Make it annoying and most people stop.
+
+---
+
+## Passwords and 2FA
+
+This is where most compromises start.
+
+Rules:
+- never reuse passwords
+- use a password manager
+- enable 2FA everywhere
+
+Yes, changing passwords sucks.
+You don’t need to do it in one day.
+Change one account per day and you’ll be done before you notice.
+
+For 2FA, use an authenticator app.
+Examples:
+Google Authenticator
+Authy
+Microsoft Authenticator
+
+Avoid SMS 2FA if possible.
+
+---
+
+## Basic system hygiene
+
+Nothing fancy, but it matters:
+- keep OS and browser updated
+- use antivirus
+- use a firewall
+- don’t install random software
+- don’t install random browser extensions
+- backup important files
+
+If something feels wrong, stop and check.
+
+---
+
+## Tools
+
+Password manager:
+- Bitwarden (free)
+- 1Password (paid)
+
+VPN (optional, but useful):
+- PrivadoVPN
+
+Link / file scanners:
+- VirusTotal
+- URLVoid
+
+Malware cleanup:
+- Windows Defender (built-in, fine if updated)
+- Malwarebytes (optional)
+
+---
+
+## If something goes wrong
+
+If you think an account or device is compromised:
+1. Change passwords (start with email)
+2. Enable 2FA
+3. Check login history
+4. Scan for malware
+5. Remove suspicious connected apps
+6. Contact support if needed
+
+---
+
+## Summary
+
+Don’t click random links.
+Use unique passwords.
+Enable 2FA.
+
+That covers most real-world attacks.
+    </div>
+
+    <a class="btn btn-outline" href="index.html">
+      ← Back to main page
+    </a>
+  </div>
+</body>
+</html>
 
